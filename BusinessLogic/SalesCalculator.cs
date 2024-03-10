@@ -43,9 +43,7 @@
         if (prediction == double.NaN)
             return double.NaN;
 
-        var currentStock = productSales.OrderByDescending(s => s.Date).FirstOrDefault()?.Stock ?? 0;
 
-        return prediction - currentStock >= 0 ? prediction - currentStock : 0;
     }
 
     private double GetFutureSeasonCoef(int productId, int days)
